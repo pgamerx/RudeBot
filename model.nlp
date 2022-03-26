@@ -1,0 +1,787 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "ass,suck,you": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "ass,fuck,suck,you": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "fuck": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "bad,you": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "a,are,bad,person,you": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "bitch": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "cunt": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "nigga": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "nigger": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "dick": {
+            "intent": "comeback.insults",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "greeting.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greeting.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greeting.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greeting.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greeting.bye",
+            "domain": "default"
+          },
+          "cya": {
+            "intent": "greeting.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "howdi": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "greet": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          },
+          "wassup": {
+            "intent": "greeting.hello",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "comeback.insults": "default",
+          "greeting.bye": "default",
+          "greeting.hello": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "you suck ass",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "you fucking suck ass",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "fuck",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "you bad",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "you are a bad person",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "bitch",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "cunt",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "nigga",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "nigger",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "dick",
+            "intent": "comeback.insults"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greeting.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye take care",
+            "intent": "greeting.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greeting.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greeting.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greeting.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "cya",
+            "intent": "greeting.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "Greetings",
+            "intent": "greeting.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "wassup",
+            "intent": "greeting.hello"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "you": 1,
+              "suck": 1,
+              "ass": 1,
+              "fuck": 1,
+              "bad": 1,
+              "are": 1,
+              "a": 1,
+              "person": 1,
+              "bitch": 1,
+              "cunt": 1,
+              "nigga": 1,
+              "nigger": 1,
+              "dick": 1,
+              "goodby": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "see": 1,
+              "later": 1,
+              "for": 1,
+              "now": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "cya": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "greet": 1,
+              "wassup": 1
+            },
+            "intents": {
+              "comeback.insults": 1,
+              "greeting.bye": 1,
+              "greeting.hello": 1
+            },
+            "intentFeatures": {
+              "comeback.insults": {
+                "you": 1,
+                "suck": 1,
+                "ass": 1,
+                "fuck": 1,
+                "bad": 1,
+                "are": 1,
+                "a": 1,
+                "person": 1,
+                "bitch": 1,
+                "cunt": 1,
+                "nigga": 1,
+                "nigger": 1,
+                "dick": 1
+              },
+              "greeting.bye": {
+                "goodby": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "for": 1,
+                "now": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1,
+                "cya": 1
+              },
+              "greeting.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1,
+                "greet": 1,
+                "wassup": 1
+              }
+            },
+            "featuresToIntent": {
+              "you": [
+                "comeback.insults",
+                "greeting.bye"
+              ],
+              "suck": [
+                "comeback.insults"
+              ],
+              "ass": [
+                "comeback.insults"
+              ],
+              "fuck": [
+                "comeback.insults"
+              ],
+              "bad": [
+                "comeback.insults"
+              ],
+              "are": [
+                "comeback.insults"
+              ],
+              "a": [
+                "comeback.insults"
+              ],
+              "person": [
+                "comeback.insults"
+              ],
+              "bitch": [
+                "comeback.insults"
+              ],
+              "cunt": [
+                "comeback.insults"
+              ],
+              "nigga": [
+                "comeback.insults"
+              ],
+              "nigger": [
+                "comeback.insults"
+              ],
+              "dick": [
+                "comeback.insults"
+              ],
+              "goodby": [
+                "greeting.bye"
+              ],
+              "bye": [
+                "greeting.bye"
+              ],
+              "take": [
+                "greeting.bye"
+              ],
+              "care": [
+                "greeting.bye"
+              ],
+              "see": [
+                "greeting.bye"
+              ],
+              "later": [
+                "greeting.bye"
+              ],
+              "for": [
+                "greeting.bye"
+              ],
+              "now": [
+                "greeting.bye"
+              ],
+              "i": [
+                "greeting.bye"
+              ],
+              "must": [
+                "greeting.bye"
+              ],
+              "go": [
+                "greeting.bye"
+              ],
+              "cya": [
+                "greeting.bye"
+              ],
+              "hello": [
+                "greeting.hello"
+              ],
+              "hi": [
+                "greeting.hello"
+              ],
+              "howdi": [
+                "greeting.hello"
+              ],
+              "greet": [
+                "greeting.hello"
+              ],
+              "wassup": [
+                "greeting.hello"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "you",
+                "suck",
+                "ass",
+                "fuck",
+                "bad",
+                "are",
+                "a",
+                "person",
+                "bitch",
+                "cunt",
+                "nigga",
+                "nigger",
+                "dick",
+                "goodby",
+                "bye",
+                "take",
+                "care",
+                "see",
+                "later",
+                "for",
+                "now",
+                "i",
+                "must",
+                "go",
+                "cya",
+                "hello",
+                "hi",
+                "howdi",
+                "greet",
+                "wassup"
+              ],
+              "intents": [
+                "comeback.insults",
+                "greeting.bye",
+                "greeting.hello"
+              ],
+              "perceptrons": [
+                [
+                  -0.04163418337702751,
+                  1.2774399518966675,
+                  1.2774399518966675,
+                  2.5937888622283936,
+                  3.8928122520446777,
+                  -0.00677928002551198,
+                  -0.00677928002551198,
+                  -0.00677928002551198,
+                  3.9192869663238525,
+                  3.921600580215454,
+                  3.923914909362793,
+                  3.9262328147888184,
+                  3.9285523891448975,
+                  -10.354839324951172,
+                  -5.208142280578613,
+                  -2.604048013687134,
+                  -2.604048013687134,
+                  -5.1893181800842285,
+                  -5.1893181800842285,
+                  -2.602979898452759,
+                  -2.602979898452759,
+                  -3.4692330360412598,
+                  -3.4692330360412598,
+                  -3.4692330360412598,
+                  -10.350152969360352,
+                  -10.347822189331055,
+                  -10.345491409301758,
+                  -10.343159675598145,
+                  -10.340824127197266,
+                  -10.33848762512207,
+                  10.416758062678603
+                ],
+                [
+                  0.5764240026473999,
+                  -1.7460460662841797,
+                  -1.7460460662841797,
+                  -2.6290767192840576,
+                  -3.2067604064941406,
+                  -0.5884653329849243,
+                  -0.5884653329849243,
+                  -0.5884653329849243,
+                  -2.629016876220703,
+                  -2.6290154457092285,
+                  -2.629014730453491,
+                  -2.629014492034912,
+                  -2.629014730453491,
+                  11.656693458557129,
+                  5.8283538818359375,
+                  2.914172887802124,
+                  2.914172887802124,
+                  5.54013729095459,
+                  5.54013729095459,
+                  2.914172887802124,
+                  2.914172887802124,
+                  3.885566473007202,
+                  3.885566473007202,
+                  3.885566473007202,
+                  11.656693458557129,
+                  -2.6339285373687744,
+                  -2.6312034130096436,
+                  -2.6298694610595703,
+                  -2.6292903423309326,
+                  -2.6290855407714844,
+                  2.6290161520076114
+                ],
+                [
+                  -3.133401393890381,
+                  -1.0425604581832886,
+                  -1.0425604581832886,
+                  -4.337743282318115,
+                  -1.4597816467285156,
+                  -0.358766108751297,
+                  -0.358766108751297,
+                  -0.358766108751297,
+                  -4.3364787101745605,
+                  -4.336286544799805,
+                  -4.336248874664307,
+                  -4.336243629455566,
+                  -4.336242198944092,
+                  -4.336242198944092,
+                  -2.168121337890625,
+                  -1.084061622619629,
+                  -1.084061622619629,
+                  -0.6014217734336853,
+                  -0.6014217734336853,
+                  -1.084061622619629,
+                  -1.084061622619629,
+                  -1.4454147815704346,
+                  -1.4454147815704346,
+                  -1.4454147815704346,
+                  -4.336241722106934,
+                  9.94947624206543,
+                  9.949467658996582,
+                  9.94946575164795,
+                  9.949464797973633,
+                  9.949464797973633,
+                  4.336244808081486
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "you suck ass"
+      ],
+      [
+        "en",
+        "you fucking suck ass"
+      ],
+      [
+        "en",
+        "fuck"
+      ],
+      [
+        "en",
+        "you bad"
+      ],
+      [
+        "en",
+        "you are a bad person"
+      ],
+      [
+        "en",
+        "bitch"
+      ],
+      [
+        "en",
+        "cunt"
+      ],
+      [
+        "en",
+        "nigga"
+      ],
+      [
+        "en",
+        "nigger"
+      ],
+      [
+        "en",
+        "dick"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "bye take care"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "cya"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "Greetings"
+      ],
+      [
+        "en",
+        "wassup"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "comeback.insults": [
+          {
+            "answer": "Sorry fella, I don’t have the energy to pretend to like you today."
+          },
+          {
+            "answer": "Umm...pardon me, I wasn’t listening. Can you repeat what you just said?"
+          },
+          {
+            "answer": "Ok. (This simple expression embodies the fact that I just don’t give a f*ck!)"
+          },
+          {
+            "answer": "Whatever you say, hefe. (Hefe is actually another term for a loser (you) Many people don’t know this, of course.)"
+          },
+          {
+            "answer": "It is kind of hilarious watching you try to fit your entire vocabulary into one sentence."
+          },
+          {
+            "answer": "How is that supposed to make me feel?"
+          },
+          {
+            "answer": "I've been called worse things by better people."
+          },
+          {
+            "answer": "Oh, enough about me! What have you been up to lately?"
+          },
+          {
+            "answer": "I understand what you're saying, but if I agreed with you, then we'd both be wrong."
+          },
+          {
+            "answer": "Shhh! *puts my finger on your lips*"
+          },
+          {
+            "answer": "Please cancel my subscription to your issues."
+          },
+          {
+            "answer": "Thanks for sharing. We’re all refreshed and challenged by your unique point of view."
+          },
+          {
+            "answer": "Remember that time when I said you were cool? Yeah I don't either"
+          },
+          {
+            "answer": "Man, no wonder everyone talks about you behind your back."
+          },
+          {
+            "answer": "If I threw a stick, you’d leave, right?"
+          },
+          {
+            "answer": "I’m trying my absolute hardest to see things from your perspective, but I just can’t get my head that far up my ass"
+          },
+          {
+            "answer": "Do your parents realize that they're living proof that two wrongs don't make a right?"
+          },
+          {
+            "answer": "Sometimes, it’s better to keep your mouth shut and give the impression that you’re stupid than open it and remove all doubt."
+          },
+          {
+            "answer": "If you have an opinion about me, raise your hand. Then, after raising your hand, put it in your mouth."
+          },
+          {
+            "answer": "Why don't you check eBay and see if they have a life for sale?"
+          },
+          {
+            "answer": "No, I just checked my receipt. I didn’t buy any of your bullsh*t."
+          },
+          {
+            "answer": "Ooooh. I almost gave a f*ck. It almost scared the sh*t out of me."
+          },
+          {
+            "answer": "Unless your name is Google, stop acting like you know everything."
+          },
+          {
+            "answer": "Did it hurt when you fell from heaven?....Cause it looks like you landed on your face!"
+          }
+        ],
+        "greeting.bye": [
+          {
+            "answer": "thank god you are going"
+          },
+          {
+            "answer": "hope I never see you again"
+          },
+          {
+            "answer": "really glad to hear that"
+          },
+          {
+            "answer": "wohoo finally you are gone"
+          }
+        ],
+        "greeting.hello": [
+          {
+            "answer": "Waddup retard"
+          },
+          {
+            "answer": "What now"
+          },
+          {
+            "answer": "Hi, now please, f*ck off"
+          },
+          {
+            "answer": "Hi? more like bye"
+          },
+          {
+            "answer": "Come on now insult me, stop greeting"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
