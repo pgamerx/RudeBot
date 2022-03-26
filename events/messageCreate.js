@@ -69,7 +69,7 @@ module.exports = {
       const response = await manager.process("en", the_poor_roast);
       const res = response.answer;
 
-      if (res == "" || res.length == 0 || res == undefined || res == null) {
+      if (res == "" || res == undefined || res == null || res.length == 0) {
         if (result["score"] >= 0 && result["score"] > -1) {
           // Say that it wasn't even an insult
           message.reply("You are not even insulting me at this point.");
