@@ -39,7 +39,7 @@ module.exports = {
         },
         {
           name: `${
-            database.get(message.guild.id + "/channel/get_roasted")
+            database.get(interaction.guild.id + "/channel/get_roasted")
               ? "<:ubmute:837570791700299807>"
               : "<:mute:837570872483119144>"
           } Get roasted by 'RudeBot'`,
@@ -49,7 +49,7 @@ module.exports = {
         },
         {
           name: `${
-            database.get(message.guild.id + "/channel/do_roast")
+            database.get(interaction.guild.id + "/channel/do_roast")
               ? "<:ubmute:837570791700299807>"
               : "<:mute:837570872483119144>"
           } Try to roast 'RudeBot'`,
