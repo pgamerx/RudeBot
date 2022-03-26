@@ -12,6 +12,10 @@ const database = require("quick.db");
 const fetch = require("node-fetch");
 const json = require("../responses/roasts.json");
 
+const { NlpManager } = require("node-nlp");
+const manager = new NlpManager({ languages: ["en"] });
+manager.load();
+
 var Sentiment = require("sentiment");
 var sentiment = new Sentiment();
 
@@ -62,16 +66,21 @@ module.exports = {
       const the_poor_roast = message.content;
       const result = sentiment.analyze(the_poor_roast);
 
-      if (result["score"] >= 0 && result["score"] > -1) {
-        // Say that it wasn't even an insult
-        return message.channel.send(
-          "You call that an insult? lol that is the nicest thing I have been said in a while."
-        );
-      } else {
-        // Return a comeback
-        const response = json[Math.floor(Math.random() * json.length)];
-        return message.channel.send(response);
+      const response = await manager.process("en", the_poor_roast);
+      const res = response.answer;
+
+      if (res == "" || res.length == 0 || res == undefined || res == null) {
+        if (result["score"] >= 0 && result["score"] > -1) {
+          // Say that it wasn't even an insult
+          message.reply("You are not even insulting me at this point.");
+        } else {
+          // Return a comeback
+          const response = json[Math.floor(Math.random() * json.length)];
+          return message.channel.send(response);
+        }
       }
+
+      return message.channel.send(res);
     }
 
     /**
