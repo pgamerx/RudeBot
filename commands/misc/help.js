@@ -62,6 +62,40 @@ module.exports = {
           value:
             "This module can be enabled using /enable command and disabled using /disable command. It is disabled by default and can be enabled in a specific channel where anyone can **try to roast RudeBot and RudeBot will provide a comeback.**",
           inline: true,
+        },
+        {
+          name: `Slash Commands`,
+          value: `List of available slash commands`,
+        },
+        {
+          name: `/enable`,
+          value: `Enable a specific module.`,
+          inline: true,
+        },
+        {
+          name: `/disable`,
+          value: `Disable a specific module.`,
+          inline: true,
+        },
+        {
+          name: `/help`,
+          value: `List all commands of bot or info about a specific command.`,
+          inline: true,
+        },
+        {
+          name: `/ping`,
+          value: `Check the ping of the bot.`,
+          inline: true,
+        },
+        {
+          name: `/roast`,
+          value: `Roasts the user.`,
+          inline: true,
+        },
+        {
+          name: `/links`,
+          value: `List of links of the bot.`,
+          inline: true,
         }
       )
       .setThumbnail(
