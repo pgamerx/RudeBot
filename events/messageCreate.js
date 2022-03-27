@@ -10,7 +10,9 @@ const { Collection } = require("discord.js");
 const { prefix, owner } = require("../config.json");
 const database = require("quick.db");
 const fetch = require("node-fetch");
+
 const json = require("../responses/roasts.json");
+const yomother = require("../responses/yomama.json");
 
 const { NlpManager } = require("node-nlp");
 const manager = new NlpManager({ languages: ["en"] });
@@ -76,13 +78,37 @@ module.exports = {
         } else {
           // Return a comeback
           const response = json[Math.floor(Math.random() * json.length)];
-          return message.channel.send(response);
+          return message.reply(response);
         }
       }
 
-      return message.channel.send(res);
+      return message.reply(res);
     }
 
+    if (message.channel.id == database.get(`${guild.id}/channel/yo_mama`)) {
+      const content = message.content;
+      // Check if the message contains 'yo mama' of any kind.
+      const yo_mama = [
+        "yo mama",
+        "yo mamma",
+        "yo mam",
+        "yo mamma",
+        "yo mam",
+        "yo mamma",
+        "yo mommy",
+        "yo ma",
+        "yo mother",
+      ];
+      if (!yo_mama.includes(content.toLowerCase()))
+        return message.reply(
+          `Yo mama is not here! ( ಠ_ಠ ), ||dumbass, start your setence with either of the following phrases: ${yo_mama.join(
+            ", "
+          )} ||`
+        );
+
+      const response = yomother[Math.floor(Math.random() * json.length)];
+      return message.reply(response);
+    }
     /**
      * @description Converts prefix to lowercase.
      * @type {String}
@@ -174,7 +200,7 @@ module.exports = {
         reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
       }
 
-      return message.channel.send({ content: reply });
+      return message.reply({ content: reply });
     }
 
     // Cooldowns

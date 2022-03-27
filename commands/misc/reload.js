@@ -41,7 +41,7 @@ module.exports = {
 
     // Command returns if there is no such command with the specific command name or alias.
     if (!command) {
-      return message.channel.send({
+      return message.reply({
         content: `There is no command with name or alias \`${commandName}\`, ${message.author}!`,
       });
     }
@@ -82,14 +82,14 @@ module.exports = {
       message.client.commands.set(newCommand.name, newCommand);
 
       // 🎉 Confirmation sent if reloading was successful!
-      message.channel.send({
+      message.reply({
         content: `Command \`${newCommand.name}\` was reloaded!`,
       });
     } catch (error) {
       // Catch block executes if there is any error in your code. It logs the error in console and also sends back in discord GUI.
 
       console.error(error);
-      message.channel.send({
+      message.reply({
         content: `There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``,
       });
     }

@@ -19,6 +19,7 @@ const { token, client_id, test_guild_id } = require("./config.json");
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  disableMentions: 'everyone'
 });
 
 const db = require("quick.db");
