@@ -759,7 +759,7 @@
         ],
         "greeting.hello": [
           {
-            "answer": "Waddup retard"
+            "answer": "Waddup ret**d"
           },
           {
             "answer": "What now"
@@ -772,6 +772,9 @@
           },
           {
             "answer": "Come on now insult me, stop greeting"
+          },
+          {
+            "answer": "OH NO NOT YOU 🤮🤮🤮🤮🤮🤮🤮"
           }
         ]
       }
