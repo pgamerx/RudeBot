@@ -25,6 +25,7 @@ module.exports = {
         .setRequired(true)
         .addChoice("Get Roasted by 'RudeBot'", "get_roasted")
         .addChoice("Try to Roast 'RudeBot'", "do_roast")
+        .addChoice("The 'Yo Mama' Module", "yo_mama")
     )
     .addChannelOption((option) =>
       option
@@ -49,30 +50,38 @@ module.exports = {
       });
     }
     const choice = interaction.options.getString("module");
-    if (choice === "get_roasted") {
-      const channel = interaction.options.getChannel("channel");
-      // Check if Bot has permission to read and send messages in the channel
-      if (
-        !channel.permissionsFor(interaction.client.user).has("READ_MESSAGES") ||
-        !channel.permissionsFor(interaction.client.user).has("SEND_MESSAGES")
-      ) {
-        return interaction.reply({
-          content:
-            "Oi dumbass, I don't have permission to read and send messages in that channel",
-        });
-      }
+    const channel = interaction.options.getChannel("channel");
 
+    // Check if Bot has permission to read and send messages in the channel
+    if (
+      !channel.permissionsFor(interaction.client.user).has("READ_MESSAGES") ||
+      !channel.permissionsFor(interaction.client.user).has("SEND_MESSAGES")
+    ) {
+      return interaction.reply({
+        content:
+          "Oi dumbass, I don't have permission to read and send messages in that channel",
+      });
+    }
+    if (choice === "get_roasted") {
       database.set(`${interaction.guild.id}/channel/get_roasted`, channel.id);
       return await interaction.reply({
         content:
-          `The channel for module ${choice} has been set to ` + channel.name,
+          `The channel for module ${choice} has been set to ` +
+          `<#${channel.id}>`,
       });
     } else if (choice === "do_roast") {
-      const channel = interaction.options.getChannel("channel");
       database.set(`${interaction.guild.id}/channel/do_roast`, channel.id);
       return await interaction.reply({
         content:
-          `The channel for module ${choice} has been set to ` + channel.name,
+          `The channel for module ${choice} has been set to ` +
+          `<#${channel.id}>`,
+      });
+    } else if (choice === "yo_mama") {
+      database.set(`${interaction.guild.id}/channel/yo_mama`, channel.id);
+      return await interaction.reply({
+        content:
+          `The channel for module ${choice} has been set to ` +
+          `<#${channel.id}>`,
       });
     }
   },

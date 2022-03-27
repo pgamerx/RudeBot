@@ -64,6 +64,16 @@ module.exports = {
           inline: true,
         },
         {
+          name: `${
+            database.get(interaction.guild.id + "/channel/yo_mama")
+              ? "<:ubmute:837570791700299807>"
+              : "<:mute:837570872483119144>"
+          } The 'Yo Mama' Module`,
+          value:
+            "This module can be enabled using /enable command and disabled using /disable command. It is disabled by default and can be enabled in a specific channel where **anyone who sends a message starting with 'Yo Mama' will be returned with a random YoMama Joke.**",
+          inline: true,
+        },
+        {
           name: `Slash Commands`,
           value: `List of available slash commands`,
         },

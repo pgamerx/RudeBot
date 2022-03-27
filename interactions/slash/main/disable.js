@@ -23,6 +23,7 @@ module.exports = {
         .setRequired(true)
         .addChoice("Get Roasted by 'RudeBot'", "get_roasted")
         .addChoice("Try to Roast 'RudeBot'", "do_roast")
+        .addChoice("The 'Yo Mama' Module", "yo_mama")
     ),
   /**
    * @description Executes when the interaction is called by interaction handler.
@@ -46,6 +47,11 @@ module.exports = {
       });
     } else if (choice === "do_roast") {
       database.delete(`${interaction.guild.id}/channel/do_roast`);
+      return await interaction.reply({
+        content: `The module ${choice} has been disabled!`,
+      });
+    } else if (choice === "yo_mama") {
+      database.delete(`${interaction.guild.id}/channel/yo_mama`);
       return await interaction.reply({
         content: `The module ${choice} has been disabled!`,
       });

@@ -54,7 +54,17 @@ module.exports = {
               : "<:mute:837570872483119144>"
           } Try to roast 'RudeBot'`,
           value:
-            "This module can be enabled using /enable command and disabled using /disable command. It is disabled by default and can be enabled in a specific channel where anyone can **try to roast RudeBot and RudeBot will provide a comeback.**",
+            "This module can be enabled using /enable command and disabled using /disable command. It is disabled by default and can be enabled in a specific channel where **anyone can try to roast RudeBot and RudeBot will provide a comeback.**",
+          inline: true,
+        },
+        {
+          name: `${
+            database.get(interaction.guild.id + "/channel/yo_mama")
+              ? "<:ubmute:837570791700299807>"
+              : "<:mute:837570872483119144>"
+          } The 'Yo Mama' Module`,
+          value:
+            "This module can be enabled using /enable command and disabled using /disable command. It is disabled by default and can be enabled in a specific channel where **anyone who sends a message starting with 'Yo Mama' will be returned with a random YoMama Joke.**",
           inline: true,
         },
         {
