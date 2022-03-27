@@ -52,16 +52,7 @@ module.exports = {
     const choice = interaction.options.getString("module");
     const channel = interaction.options.getChannel("channel");
 
-    // Check if Bot has permission to read and send messages in the channel
-    if (
-      !channel.permissionsFor(interaction.client.user).has("READ_MESSAGES") ||
-      !channel.permissionsFor(interaction.client.user).has("SEND_MESSAGES")
-    ) {
-      return interaction.reply({
-        content:
-          "Oi dumbass, I don't have permission to read and send messages in that channel",
-      });
-    }
+
     if (choice === "get_roasted") {
       database.set(`${interaction.guild.id}/channel/get_roasted`, channel.id);
       return await interaction.reply({
